@@ -14,7 +14,7 @@ module.exports = () => {
       install: "./src/js/install.js",
     },
     output: {
-      filename: "bundle.js", //this used to say "[name].bundle.js"
+      filename: "[name].bundle.js", //this used to say "[name].bundle.js"
       path: path.resolve(__dirname, "dist"),
     },
     plugins: [
@@ -23,7 +23,7 @@ module.exports = () => {
         title: "Webpack Plugin",
       }),
       new InjectManifest({
-        swSrc: "./src/sw.js",
+        swSrc: "./src-sw.js",
         swDest: "service-worker.js",
       }),
       new WebpackPwaManifest({
